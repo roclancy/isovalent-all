@@ -33,7 +33,7 @@ Step 1 – Git Clone this repo
 
 Step 2 – Create Your Environment variables
 ------------------------------------------
-Edit the env.sh file to create your environment variables as shown in the image below
+Edit the _**env.sh**_ file to create your environment variables as shown in the image below
 
 <img width="468" height="101" alt="image" src="https://github.com/user-attachments/assets/5427e4d9-4ff7-4c29-baac-a8eaac771563" />
 
@@ -43,11 +43,12 @@ Step 3 – Create All
 -------------------
 Run the command below in the directory you cloned this repo to:
 
-source create-ALL.sh
+_**source create-ALL.sh**_
 
-The script will start by creating 
-2 x EKS clusters and then move to 
-Install Cilium, 
+The script will start by creating
+
+2 x EKS clusters and then move to
+Install Cilium
 Install Hubble relay
 Install Hubble ui
 Install Cilium Cluster Mesh
@@ -61,7 +62,7 @@ Step 4 – Delete All
 -------------------
 Run the command to execute the script to delete all 
 
-source delete-ALL.sh
+_**source delete-ALL.sh**_
 
 <img width="468" height="327" alt="image" src="https://github.com/user-attachments/assets/bf8ae242-1206-43ce-860d-375c14303633" />
 
