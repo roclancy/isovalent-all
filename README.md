@@ -41,7 +41,7 @@ Edit the env.sh file to create your environment variables as shown in the image 
 
 Step 3 – Create All
 -------------------
-Run the command below in the directory you clone the repo to:
+Run the command below in the directory you cloned this repo to:
 
 source create-ALL.sh
 
