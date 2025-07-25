@@ -47,12 +47,12 @@ _**source create-ALL.sh**_
 
 The script will start by creating
 
-2 x EKS clusters and then move to
-Install Cilium
-Install Hubble relay
-Install Hubble ui
-Install Cilium Cluster Mesh
-Launch the hubble ui at the end on your local machine (uisng port forwarding in the background) see image below of output
+- 2 x EKS clusters
+- Install Cilium
+- Install Hubble relay
+- Install Hubble ui
+- Install Cilium Cluster Mesh
+- Launch the hubble ui at the end on your local machine (uisng port forwarding in the background) see image below of output
 
 <img width="468" height="119" alt="image" src="https://github.com/user-attachments/assets/808709a5-af60-4701-90e4-51eba5ea3f08" />
 
