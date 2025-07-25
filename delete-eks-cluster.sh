@@ -1,0 +1,30 @@
+#Make NO Changes in the file
+
+echo "DELETING CLUSTER 1"
+eksctl delete  cluster --name $EKS_CREATE_CLUSTER1
+
+echo "  SLEEPING FOR 30 SECONDS"
+sleep 30
+
+echo "DELETING CLUSTER 2"
+
+eksctl delete  cluster --name $EKS_CREATE_CLUSTER2
+
+echo "DELETING ENVIRONMENT VARIABLES"
+
+unset EKS_CREATE_CLUSTER1
+unset EKS_CREATE_CLUSTER2
+unset EKS_CREATE_REGION
+unset EKS_EC2_KEY
+unset EKS_CREATE_NODE_GRP
+
+unset CLUSTER1
+unset CLUSTER2
+
+unset CILIUM_NAME1
+unset CILIUM_NAME2
+
+unset AWS_ACCESS_KEY_ID
+unset AWS_SECRET_ACCESS_KEY
+
+echo "**** FINISHED DELETING ALL ********* ;-)"
