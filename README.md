@@ -1,8 +1,11 @@
 # isovalent-all
+MAC OS
+
 All in one config to create 2 AWS EKS clusters, Install Cilium, Hubble Relay, Hubble UI and Cluster Mesh
 
 
 Pre-requisites Requirements
+---------------------------
 
 The below tools/accounts were used in the below installation example and needed
 
@@ -25,14 +28,51 @@ o	 command-line tool used to install and interact isovalent components
 o	 Installation for a Mac are: brew install hubble
 
 
----------------------------------
-
 Step 1 – Git Clone this repo
+-----------------------------
 
 Step 2 – Create Your Environment variables
+------------------------------------------
 Edit the env.sh file to create your environment variables as shown in the image below
 
-<img width="468" height="101" alt="image" src="https://github.com/user-attachments/assets/5c738527-e9f5-4a8a-8d9a-18d516a1adee" />
+<img width="468" height="101" alt="image" src="https://github.com/user-attachments/assets/5427e4d9-4ff7-4c29-baac-a8eaac771563" />
+
+<img width="468" height="162" alt="image" src="https://github.com/user-attachments/assets/3513ab73-dbb6-4231-b7d6-85cd55ece301" />
+
+Step 3 – Create All
+-------------------
+Run the command below in the directory you clone the repo to:
+
+source create-ALL.sh
+
+The script will start by creating 
+2 x EKS clusters and then move to 
+Install Cilium, 
+Install Hubble relay
+Install Hubble ui
+Install Cilium Cluster Mesh
+Launch the hubble ui at the end on your local machine (uisng port forwarding in the background) see image below of output
+
+<img width="468" height="119" alt="image" src="https://github.com/user-attachments/assets/808709a5-af60-4701-90e4-51eba5ea3f08" />
+
+<img width="468" height="307" alt="image" src="https://github.com/user-attachments/assets/54e45a45-7591-4891-9b04-7cf29e592892" />
+
+Step 4 – Delete All
+-------------------
+Run the command to execute the script to delete all 
+
+source delete-ALL.sh
+
+<img width="468" height="327" alt="image" src="https://github.com/user-attachments/assets/bf8ae242-1206-43ce-860d-375c14303633" />
+
+
+
+
+
+
+
+
+
 
 
 
