@@ -1,7 +1,7 @@
 # Isovalent EKS all in one script
 MAC OS
 
-All in one script to create 2 AWS EKS clusters, Install Cilium, Hubble Relay, Hubble UI and Cluster Mesh
+All in one script to create 2 AWS EKS clusters, Install Cilium, Hubble Relay, Hubble UI and Cluster Mesh on the 2 newly created EKS Clusters
 
 
 Pre-requisites Requirements
