@@ -3,7 +3,7 @@ MAC OS
 
 All in one script to create 2 AWS EKS clusters, Install Cilium, Hubble Relay, Hubble UI and Cluster Mesh on the 2 newly created EKS Clusters, and also configure metrics, grafana and the grafana isovalent example dashboards
 
-Pre-requisites Requirements
+Prerequisites Requirements
 ---------------------------
 
 The below tools/accounts were used in the below installation example and needed
