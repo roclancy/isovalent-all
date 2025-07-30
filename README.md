@@ -6,11 +6,11 @@ All in one script to create 2 AWS EKS clusters, Install Cilium, Hubble Relay, Hu
 Prerequisites Requirements
 ---------------------------
 
-The below tools/accounts were used in the below installation example and needed
+The below tools/accounts were used in the below installation example and are needed
 
 
 - AWS Account
-  - You should have an AWS account where you can deploy an EKS cluster & AWS access key & Secret
+  - You should have an AWS account where you can deploy an EKS cluster & IAM user with AWS access key & Secret Key
 
 - AWS Command Line Interface (CLI) - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
   - AWS CLI is a command-line tool provided by AWS that allows users to interact with various AWS services and resources from the command line. 
