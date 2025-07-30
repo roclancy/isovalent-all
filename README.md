@@ -53,7 +53,7 @@ The script will start by creating
 - Install Cilium Cluster Mesh
 - Configure and enable metrics settings which are needed for Gafana/Prometius dashboards
 - Install the Grafana Configuration
-- Launch the hubble ui at the end on your local machine (using port forwarding in the background) see image below of output
+- Launch the hubble ui on your local machine (using port forwarding in the background)
 - Launch access to Grafana Dashboards on your local machine (using port forwarding in the background)
 
 <img width="468" height="119" alt="image" src="https://github.com/user-attachments/assets/808709a5-af60-4701-90e4-51eba5ea3f08" />
