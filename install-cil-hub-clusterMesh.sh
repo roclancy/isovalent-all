@@ -1,11 +1,27 @@
+echo " "
+date
+echo " "
 
 #SET ENV'S
 
 echo "INSTALLING CILIUM"
 
 #INSTALL Cilium - if not already installed
-cilium install --set cluster.name=$CILIUM_NAME1 --set cluster.id=1 --context $CLUSTER1 --set bgpControlPlane.enabled=true
-cilium install --set cluster.name=$CILIUM_NAME2 --set cluster.id=2 --context $CLUSTER2 --set bgpControlPlane.enabled=true
+cilium install --set cluster.name=$CILIUM_NAME1 --set cluster.id=1 --context $CLUSTER1 \
+--set prometheus.enabled=true \
+--set operator.prometheus.enabled=true \
+--set hubble.enabled=true \
+--set hubble.metrics.enableOpenMetrics=true \
+--set hubble.metrics.enabled="{dns,drop,tcp,flow,port-distribution,icmp,httpV2:exemplars=true;labelsContext=source_ip\,source_namespace\,source_workload\,destination_ip\,destination_namespace\,destination_workload\,traffic_direction}"
+
+
+cilium install --set cluster.name=$CILIUM_NAME2 --set cluster.id=2 --context $CLUSTER2 \
+--set prometheus.enabled=true \
+--set operator.prometheus.enabled=true \
+--set hubble.enabled=true \
+--set hubble.metrics.enableOpenMetrics=true \
+--set hubble.metrics.enabled="{dns,drop,tcp,flow,port-distribution,icmp,httpV2:exemplars=true;labelsContext=source_ip\,source_namespace\,source_workload\,destination_ip\,destination_namespace\,destination_workload\,traffic_direction}"
+
 
 echo "  SLEEPING FOR 120 SECONDS" 
 sleep 120
@@ -59,8 +75,19 @@ cilium clustermesh connect --context $CLUSTER1 --destination-context $CLUSTER2
 echo "  SLEEPING FOR 10 SECONDS"
 sleep 10
 
+echo "SETTING UP GRAFANA DASHBOARD CONFIG EXAMPLES"
+kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.18.0/examples/kubernetes/addons/prometheus/monitoring-example.yaml
+
+sleep 30
+
 echo "LAUNCHING HUBBLE UI"
 cilium hubble ui &
+
+echo " "
+echo "ENABLING PORT FORWARDING TO PORT 3000"
+kubectl -n cilium-monitoring port-forward service/grafana --address 0.0.0.0 --address :: 3000:3000 &
+echo " "
+echo "click link to access Grafana Dashboards --->  http://localhost:3000 "
 
 
 #--------
@@ -76,7 +103,7 @@ cilium hubble ui &
 
 echo " "
 echo " "
-echo "COMPLETE AND FINISHED"
+echo "COMPLETE AND FINISHED AT "
+date
 #echo " cilium hubble ui &"
 echo " "
-
