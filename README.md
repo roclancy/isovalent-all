@@ -1,6 +1,8 @@
 # Isovalent EKS all in one script
 Tested using - MAC OS
 
+This script is using the OSS Version of Isovalent Cilium (CLI)
+
 All in one script to create 2 AWS EKS clusters, Install Cilium, Hubble Relay, Hubble UI and Cluster Mesh on the 2 newly created EKS Clusters, and also configure metrics, grafana and the grafana isovalent example dashboards
 
 Prerequisites Requirements
