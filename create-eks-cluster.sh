@@ -22,7 +22,7 @@ eksctl create nodegroup \
 echo "  SLEEPING FOR 20 SECONDS"
 sleep 20
 
-CLUSTER1=$(kubectl config current-context)
+export CLUSTER1=$(kubectl config current-context)
 
 echo "CREATING 2ND EKS CLUSTER"
 
@@ -42,7 +42,7 @@ eksctl create nodegroup \
   --ssh-public-key $EKS_EC2_KEY
 
 
-CLUSTER2=$(kubectl config current-context)
+export CLUSTER2=$(kubectl config current-context)
 
 echo "  SLEEPING FOR 30 SECONDS, NEXT CILIUM WILL BE INSTALLED"
 sleep 30
